@@ -73,3 +73,6 @@ class SudokuSolver{
         return true;
     }
 }
+class wow{
+
+}

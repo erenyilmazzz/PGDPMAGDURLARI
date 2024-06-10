@@ -1,6 +1,6 @@
 package Chapter01;
 
-public class HW1 {
+public class HW01 {
     public static void main(String[] args) {
         //1.1
         System.out.println("Welcome to Java");
@@ -88,6 +88,6 @@ public class HW1 {
         double x=((44.5*0.55)-(50.2*5.9))/((3.4*0.55)-(50.2*2.1));
         double y=((3.4*5.9)-(44.5*2.1))/((3.4*0.55)-(50.2*2.1));
         System.out.println("x: "+ x);
-        System.out.println("y: "+ y);
+        System.out.println("y: "+ y); 
     }
 }

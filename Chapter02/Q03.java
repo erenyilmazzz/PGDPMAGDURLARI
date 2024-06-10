@@ -9,6 +9,5 @@ public class Q03 {
         double feet = scanner.nextDouble();
         double meters = feet * 0.305;
         System.out.println(feet + " feet is " + meters + " meters");
-
     }
 }

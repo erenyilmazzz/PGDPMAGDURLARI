@@ -23,9 +23,10 @@ public class Q11 {
             case 12 -> "December";
             default -> "Invalid value";
         };
+        boolean isLapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
         int days = switch (month){
             case 1 -> 31;
-            case 2 -> ((year % 4 == 0) ? 29 : 28);
+            case 2 -> (isLapYear ? 29 : 28);
             case 3 -> 31;
             case 4 -> 30;
             case 5 -> 31;

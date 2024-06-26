@@ -10,12 +10,23 @@ public class Q03 {
         double savannahY = -81.0998342;
         double charlotteX = 35.2270869;
         double charlotteY = -80.8431267;
+        double radius = 6371.01;
 
-        double charAtl = Math.sqrt(Math.pow(atlantaX - charlotteX, 2) + Math.pow(atlantaY - charlotteY, 2));
-        double charSav = Math.sqrt(Math.pow(savannahX - charlotteX, 2) + Math.pow(savannahY - charlotteY, 2));
-        double savOrl = Math.sqrt(Math.pow(savannahX - orlandoX, 2) + Math.pow(savannahX - orlandoY, 2));
-        double orlChar = Math.sqrt(Math.pow(orlandoX - charlotteX, 2) + Math.pow(orlandoY - charlotteY, 2));
-        double orlAtl = Math.sqrt(Math.pow(orlandoX - atlantaX, 2) + Math.pow(orlandoY - atlantaY, 2));
+        double charAtl = radius * Math.acos(Math.sin(Math.toRadians(atlantaX)) * Math.sin(Math.toRadians(charlotteX)) +
+                         Math.cos(Math.toRadians(atlantaX)) * Math.cos(Math.toRadians(charlotteX)) *
+                         Math.cos(Math.toRadians(atlantaY) - Math.toRadians(charlotteY)));
+        double charSav = radius * Math.acos(Math.sin(Math.toRadians(savannahX)) * Math.sin(Math.toRadians(charlotteX)) +
+                Math.cos(Math.toRadians(savannahX)) * Math.cos(Math.toRadians(charlotteX)) *
+                        Math.cos(Math.toRadians(savannahY) - Math.toRadians(charlotteY)));
+        double savOrl = radius * Math.acos(Math.sin(Math.toRadians(savannahX)) * Math.sin(Math.toRadians(orlandoX)) +
+                Math.cos(Math.toRadians(savannahX)) * Math.cos(Math.toRadians(orlandoX)) *
+                        Math.cos(Math.toRadians(savannahY) - Math.toRadians(orlandoY)));
+        double orlChar = radius * Math.acos(Math.sin(Math.toRadians(charlotteX)) * Math.sin(Math.toRadians(orlandoX)) +
+                Math.cos(Math.toRadians(charlotteX)) * Math.cos(Math.toRadians(orlandoX)) *
+                        Math.cos(Math.toRadians(charlotteY) - Math.toRadians(orlandoY)));
+        double orlAtl = radius * Math.acos(Math.sin(Math.toRadians(atlantaX)) * Math.sin(Math.toRadians(orlandoX)) +
+                Math.cos(Math.toRadians(atlantaX)) * Math.cos(Math.toRadians(orlandoX)) *
+                        Math.cos(Math.toRadians(atlantaY) - Math.toRadians(orlandoY)));
         double s1 = (charAtl + orlAtl + orlChar) / 2;
         double area1 = Math.sqrt(s1 * (s1 - charAtl) * (s1 - orlAtl) * (s1 - orlChar));
         double s2 = (charSav + savOrl + orlChar) / 2;
